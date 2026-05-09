@@ -4,9 +4,6 @@ fqdn: ${hostname}.${domain}
 prefer_fqdn_over_hostname: true
 preserve_hostname: false
 create_hostname_file: true
-package_update: true
-package_upgrade: true
-package_reboot_if_required: true
 ssh_pwauth: false
 users:
   - name: ansible
@@ -18,6 +15,10 @@ users:
       - ${ssh_public_key}
 packages:
   - qemu-guest-agent
+  - lvm2
+  - python3
+  - python3-firewall
+  - firewalld
 runcmd:
   - systemctl enable qemu-guest-agent
   - systemctl start qemu-guest-agent
