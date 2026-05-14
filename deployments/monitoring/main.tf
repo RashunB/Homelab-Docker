@@ -60,3 +60,7 @@ module "media_vm" {
     proxmox.root = proxmox.root
   }
 }
+
+output "tag_list" {
+  value = module.media_vm.tag_list
+}
