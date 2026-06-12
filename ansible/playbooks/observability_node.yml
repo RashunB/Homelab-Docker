@@ -1,8 +1,8 @@
 ---
 - name: Observability Stack Control
-  hosts: observability_control
+  hosts: observability_node
   become: true
   force_handlers: true
   roles:
     - role: docker_base
-    - role: observability_control
+    - role: observability_node
